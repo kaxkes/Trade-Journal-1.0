@@ -1546,7 +1546,7 @@ function normalizeDateFromSheet(raw){
   if(mIso){
     return `${mIso[1]}-${mIso[2]}-${mIso[3]}`;
   }
-  // already ISO date "2026-06-17"
+  // already ISO date "2026-06-no 17"
   if(/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
   // DD/MM/YYYY format (legacy)
   const m2=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
@@ -1732,7 +1732,7 @@ function getStreakWarning(){
 
   // 3 ไม้ loss ติดกัน → warning เหลือง (อีก 1 = shutdown)
   if(consec===3) return {
-    msg:`⚠️ แพ้ติดกัน 3 ไม้แล้ว! อีก 1 ไม้ถ้าแพ้ = Shutdown ทันที`,
+    msg:`อีก 1 ไม้ถ้าแพ้ = Shutdown ทันที`,
     level:'warn'
   };
 
